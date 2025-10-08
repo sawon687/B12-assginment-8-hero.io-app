@@ -2,12 +2,12 @@
 import { Link, NavLink } from 'react-router';
 import logo from '../../assets/logo.png';
 import giticon from '../../assets/github.png'
-import { useState } from 'react';
+
 
 
 
 const Navbar = () => {
-    const [isActive,setCliked]=useState(false)
+    
     return (
         <>
             <div className="navbar px-20 bg-base-100 shadow-sm">
