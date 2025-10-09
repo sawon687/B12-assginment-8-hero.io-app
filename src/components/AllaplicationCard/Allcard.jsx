@@ -3,7 +3,7 @@ import Ratingicon from '../../assets/icon-ratings.png'
 import  Downloadicon  from '../../assets/icon-downloads.png';
 import { Link } from 'react-router';
 const Allcard = ({appdata}) => {
-    console.log(appdata)
+ 
     const {id,downloads,image,ratingAvg,title}=appdata
     return (
         <Link to={`/AppDetails/${id}`}>
