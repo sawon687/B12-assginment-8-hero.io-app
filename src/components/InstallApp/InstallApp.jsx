@@ -4,7 +4,7 @@ import { PiDownloadSimpleBold } from "react-icons/pi";
 
 const InstallApp = ({ app, onRemove }) => {
   return (
-    <div className="flex items-center justify-between bg-white shadow-sm p-5 rounded-xl mb-4">
+    <div className="flex items-center justify-between flex-col md:flex-row bg-white shadow-sm p-5 rounded-xl mb-4">
       <div className="flex items-center gap-6">
         <figure className="w-[140px] bg-gray-300 rounded-xl">
           <img src={app.image} alt={app.title} className="rounded-xl" />

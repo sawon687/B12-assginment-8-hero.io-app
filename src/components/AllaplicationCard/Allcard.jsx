@@ -2,11 +2,15 @@
 import Ratingicon from '../../assets/icon-ratings.png'
 import  Downloadicon  from '../../assets/icon-downloads.png';
 import { Link } from 'react-router';
-const Allcard = ({appdata}) => {
+import Loading from '../Loading/Loading';
+const Allcard = ({appdata, loading}) => {
  
     const {id,downloads,image,ratingAvg,title}=appdata
     return (
-        <Link to={`/AppDetails/${id}`}>
+      <>
+        {
+          !loading?(
+            <Link to={`/AppDetails/${id}`}>
          <div className="card px-4 h-full  bg-base-100   shadow-sm">
           <figure className="px-3 mt-4 h-[300px]   bg-gray-200 flex justify-center items-center">
             <img 
@@ -28,6 +32,9 @@ const Allcard = ({appdata}) => {
           </div>
         </div>
         </Link>
+           ):<Loading></Loading>
+        }
+        </>
     );
 };
 

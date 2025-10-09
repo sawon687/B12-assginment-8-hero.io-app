@@ -17,22 +17,21 @@ const Banner = () => {
         <div className='pt-20 space-y-4'>
             <h1 className='text-7xl text-[#001931] text-center font-bold'>We Build <br />
 <span className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text  text-transparent  font-bold'>Productive</span> Apps</h1>
-<p className='text-center px-90 text-gray-500'>At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
+<p className='text-center lg:px-90 text-gray-500'>At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
  <div className='flex justify-center gap-5'>
     <Link className='btn py-6'><img src={playStoreIcon}  alt="play store" /> Google Play</Link>
     <Link className='btn py-6'> <img src={appStoreIcon} alt="App store" />App Store</Link>
     </div>
      
-      <div>
-       <figure className='w-[700px] mx-auto mt-7' > <img src={hero} alt="" /></figure>
+    <div>
+    <figure className='lg:w-[700px] md:w-[500px] mx-auto mt-7' > <img src={hero} alt="" /></figure>
 
-       <div className='py-10 space-y-7  bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>
-           <h1 className='text-center  text-4xl text-white font-bold'>Trusted by Millions, Built for You</h1>
-              <div className='flex justify-center gap-20'>
-               {
+    <div className='py-10 space-y-7  bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>
+    <h1 className='text-center  text-4xl text-white font-bold'>Trusted by Millions, Built for You</h1>
+<div className='flex justify-center flex-col md:flex-row gap-20'>
+         {
                  
-                    
-                   totaldowonload.map((data,index)=> <div key={index} className='space-y-4 text-center'>
+ totaldowonload.map((data,index)=> <div key={index} className='space-y-4 text-center'>
 
                     <p className='text-white'>{data.title}</p>
                     <h1 className='text-white font-bold text-6xl'>{data.dowonReviwerapp}</h1>

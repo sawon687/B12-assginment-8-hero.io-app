@@ -5,7 +5,7 @@ import InstallApp from "../InstallApp/InstallApp";
 const InstallApps = () => {
   const [sortOrder, setSortOrder] = useState("none");
   const [installed, setInstalledApps] = useState([]);
-
+    const [open,setOpen]=useState(false)
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("InstalledApps")) || [];
     setInstalledApps(saved);
@@ -26,7 +26,7 @@ const InstallApps = () => {
       const saved = JSON.parse(localStorage.getItem("InstalledApps")) || [];
       setInstalledApps(saved);
     }
-  }, [sortOrder]);
+  }, []);
 
   const getSortLabel = () => {
     switch (sortOrder) {
@@ -40,7 +40,7 @@ const InstallApps = () => {
   };
 
   return (
-    <div className="px-20">
+    <div className="md:px-10 lg:px-20 ">
       <div className="pt-20">
         <h1 className="text-4xl text-[#001931] text-center font-bold">
           Your Installed Apps
@@ -49,15 +49,15 @@ const InstallApps = () => {
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
-
+         <div className="flex flex-col">
       <div className="flex justify-between mt-4">
         <h1 className="font-bold text-2xl">
           ({installed.length}) Apps Found
         </h1>
 
         <details className="dropdown">
-          <summary className="btn m-1 flex items-center">
-            {getSortLabel()} <FaCaretDown className="ml-2" />
+          <summary onClick={()=> setOpen(!open)} className="btn m-1 flex items-center">
+            {getSortLabel()} <FaCaretDown  className={`${open?'rotate-180':'rotate-0'}`} />
           </summary>
           <ul className="menu dropdown-content bg-base-100 rounded-box z-10 p-2 shadow">
             <li>
@@ -74,7 +74,7 @@ const InstallApps = () => {
         </details>
       </div>
 
-      <div className="space-y-4 mt-5">
+      <div className="space-y-4 mt-5 px-5 md:px-0">
         {installed.length > 0 ? (
           installed.map((app) => (
             <InstallApp key={app.id} app={app} onRemove={handleRemove} />
@@ -82,6 +82,7 @@ const InstallApps = () => {
         ) : (
           <p className="text-center text-5xl font-bold text-gray-500">No installed apps found.</p>
         )}
+      </div>
       </div>
     </div>
   );

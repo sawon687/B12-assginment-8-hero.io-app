@@ -4,7 +4,7 @@ import Allaplication from '../components/Allaplication/Allaplication';
 
 const Apps = () => {
     return (
-        <div className='px-20 pt-10 '>
+        <div className='lg:px-20  px-10  pt-10 '>
            <Allaplication></Allaplication>
         </div>
     );
