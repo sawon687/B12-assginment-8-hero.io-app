@@ -3,6 +3,7 @@ import RootLayout from "../RootLayout/RootLayout";
 import Home from "../Pages/Home";
 import Apps from "../Pages/Apps";
 import Installation from "../Pages/Installation";
+import AppDetails from "../Pages/appdetails";
 
 const router=createBrowserRouter([
 
@@ -26,6 +27,10 @@ const router=createBrowserRouter([
             {
                 path:'/Installation',
                 Component:Installation
+            },
+            {
+                path:'/AppDetails/:id',
+                Component:AppDetails
             }
         ]
     },

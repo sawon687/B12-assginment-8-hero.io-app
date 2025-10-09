@@ -1,12 +1,15 @@
 import Ratingicon from '../../assets/icon-ratings.png'
 import  Downloadicon  from '../../assets/icon-downloads.png';
+import { Link } from 'react-router';
 
-const Appcard = ({appData}) => {
+const Homecard = ({appData}) => {
     console.log(appData)
-    const {downloads,image,ratingAvg,title}=appData
+    const {id,downloads,image,ratingAvg,title}=appData
     return (
         <>
-          <div className="card px-4 bg-base-100  shadow-xl shadow-sm">
+      <Link to={`/AppDetails/${id}`}>
+      
+          <div className="card px-4 bg-base-100   shadow-sm">
   <figure className="px-3 mt-4 h-[300px]   bg-gray-200 flex justify-center items-center">
     <img 
       src={image}
@@ -26,9 +29,11 @@ const Appcard = ({appData}) => {
     </div>
   </div>
 </div>
+      
+      </Link>
 
         </>
     );
 };
 
-export default Appcard;
+export default Homecard;
