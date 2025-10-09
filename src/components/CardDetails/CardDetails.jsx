@@ -29,7 +29,7 @@ const CardDetails = () => {
     setIsClicked(true);
   };
 
-  if (!singleApp) return <h1 className="text-center">Loading...</h1>;
+  if (!singleApp) return <h1 className="flex h-[700px] justify-center items-center text-6xl font-bold">Not Found This App</h1>;
 
   const { image, title, description, companyName, size, downloads, ratingAvg, reviews, ratings } =
     singleApp;

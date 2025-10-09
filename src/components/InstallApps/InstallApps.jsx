@@ -19,9 +19,9 @@ const InstallApps = () => {
 
   useEffect(() => {
     if (sortOrder === "price-low") {
-      setInstalledApps((prev) => [...prev].sort((a, b) => a.size - b.size));
+      setInstalledApps( [...installed].sort((a, b) => a.size - b.size));
     } else if (sortOrder === "price-high") {
-      setInstalledApps((prev) => [...prev].sort((a, b) => b.size - a.size));
+      setInstalledApps( [...installed].sort((a, b) => b.size - a.size));
     } else {
       const saved = JSON.parse(localStorage.getItem("InstalledApps")) || [];
       setInstalledApps(saved);
@@ -80,7 +80,7 @@ const InstallApps = () => {
             <InstallApp key={app.id} app={app} onRemove={handleRemove} />
           ))
         ) : (
-          <p className="text-center text-gray-500">No installed apps found.</p>
+          <p className="text-center text-5xl font-bold text-gray-500">No installed apps found.</p>
         )}
       </div>
     </div>
