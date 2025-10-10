@@ -6,13 +6,16 @@ import Loading from '../components/Loading/Loading';
 
 const Installation = () => {
     const [,loading]=useApp()
+    if(loading)
+    {
+        return loading
+    }
     return (
         <>
-        {
-           !loading?<div>
+               <div>
             <InstallApps ></InstallApps>
-        </div>:<Loading/> 
-        }
+        </div>
+        
         
         </>
     );

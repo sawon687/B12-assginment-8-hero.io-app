@@ -1,5 +1,5 @@
 import useApp from "../../hook/usehook";
-import { Link, useNavigate, useParams } from "react-router";
+import {  useNavigate, useParams } from "react-router";
 import { FaStar } from "react-icons/fa";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import like from "../../assets/icon-review.png";
@@ -7,10 +7,11 @@ import Rechart from "../Rechart/Rechart";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import AppsNotFound from "../AppsNotFound/AppsNotFound";
+import Loading from "../Loading/Loading";
 
 const CardDetails = () => {
   const [isClicked, setIsClicked] = useState(true);
-  const [appdetails] = useApp();
+  const [appdetails,loading] = useApp();
   const { id } = useParams();
 
   const singleApp = appdetails.find((app) => app.id === parseInt(id));
@@ -44,6 +45,8 @@ const CardDetails = () => {
 
   const { image, title, description, companyName, size, downloads, ratingAvg, reviews, ratings } =
     singleApp;
+
+   
 
   return (
     <div className="md:w-11/12 mx-auto lg:w-[1300px] ">

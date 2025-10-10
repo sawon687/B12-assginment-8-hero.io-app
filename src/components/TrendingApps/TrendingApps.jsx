@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 import Loading from '../Loading/Loading';
 
 const TrendingApps = () => {
-    const [app,loading ,Error]=useApp()
+    const [app]=useApp()
     const trendinApps=app.slice(0,8)
     console.log(trendinApps)
     return (
         <div>
 
-          { !loading? (
+           (
                      <div className='py-10'>
             <h1 className='text-center my-4 text-5xl font-bold'>Trending Apps</h1>
             <p className='text-center text-[#627382]'>Explore All Trending Apps on the Market developed by us</p>
@@ -25,8 +25,8 @@ const TrendingApps = () => {
            <div className=' flex justify-center py-10' >
             <Link to='/Apps' className=' btn px-10 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Show All</Link>
            </div>
-               </div>) : <Loading></Loading>
-          }
+               </div>) 
+          
 
         
         </div>

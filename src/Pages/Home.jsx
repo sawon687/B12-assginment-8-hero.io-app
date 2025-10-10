@@ -6,15 +6,19 @@ import useApp from '../hook/usehook';
 
 const Home = () => {
     const [,loading]=useApp()
+    if(loading)
+    {
+        return <Loading></Loading>
+    }
     return (
         <>
-        {
-            !loading?(<div className='bg-[#f5f5f5]'>
+        
+            (<div className='bg-[#f5f5f5]'>
             <Banner></Banner>
             <TrendingApps></TrendingApps>
            
-            </div>):<Loading/>
-        }
+            </div>)
+        
         </>
     );
 };

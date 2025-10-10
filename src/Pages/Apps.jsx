@@ -6,14 +6,17 @@ import Loading from '../components/Loading/Loading';
 
 const Apps = () => {
     const [,loading]=useApp()
+    if(loading)
+  {
+    return <Loading></Loading>
+  }
     return (
         <>
         
-        {
-            !loading?<div className='lg:px-20  px-10  pt-10 '>
+       <div className='lg:px-20  px-10  pt-10 '>
            <Allaplication></Allaplication>
-        </div>:<Loading></Loading>
-        }
+        </div>
+        
         </>
     );
 };

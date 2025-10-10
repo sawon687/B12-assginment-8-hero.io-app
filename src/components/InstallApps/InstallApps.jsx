@@ -26,7 +26,7 @@ const InstallApps = () => {
       const saved = JSON.parse(localStorage.getItem("InstalledApps")) || [];
       setInstalledApps(saved);
     }
-  }, []);
+  }, [sortOrder]);
 
   const getSortLabel = () => {
     switch (sortOrder) {

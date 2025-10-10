@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import Navbar from '../components/Navbar/Navbar';
 import { Outlet } from 'react-router';
 import Footer from '../components/Footer/Footer';
@@ -7,21 +7,23 @@ import Loading from '../components/Loading/Loading';
 
 const RootLayout = () => {
  const [,loading]=useApp()
+  if(loading)
+  {
+    return <Loading></Loading>
+  }
     return (
         < >
         
-        { 
-           !loading?
-               (  <div>
+        
+                 <div>
                 <Navbar></Navbar>
              <div className='min-h-screen bg-gray-100 '>     
-              {
-                !loading?(<Outlet />):<Loading></Loading>
-              }
+              <Outlet />
+              
            </div>
             <Footer></Footer>
-            </div>): <Loading/>
-        }
+            </div> 
+        
           
         
             
