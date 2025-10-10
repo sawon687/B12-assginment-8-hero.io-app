@@ -1,6 +1,6 @@
 import React from 'react';
 import notFoundAppIcon from '../../assets/App-Error.png'
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 
 const AppsNotFound = () => {
    

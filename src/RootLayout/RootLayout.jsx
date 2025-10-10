@@ -15,7 +15,9 @@ const RootLayout = () => {
                (  <div>
                 <Navbar></Navbar>
              <div className='min-h-screen bg-gray-100 '>     
-            <Outlet />
+              {
+                !loading?(<Outlet />):<Loading></Loading>
+              }
            </div>
             <Footer></Footer>
             </div>): <Loading/>

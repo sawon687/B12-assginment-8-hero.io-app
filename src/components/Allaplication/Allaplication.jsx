@@ -55,7 +55,7 @@ const Allaplication = () => {
              <div > 
            
 
-           { loading || searchloading?(
+           {  searchloading?(
                     <Loading></Loading>
             ): searchApp.length > 0 ? 
              ( <div className='grid py-15 lg:grid-cols-4 gap-5 mt-10  md:grid-cols-3 grid-cols-1'>  {searchApp.map(appdata=> <Allcard key={appdata.id}  appdata={appdata}></Allcard>) } </div>) :

@@ -20,8 +20,8 @@ const Navbar = () => {
         tabIndex={0}
         className="menu  menu-sm  dropdown-content bg-base-100 rounded-box z-1 mt-3 w-25 space-y-7 p-2 shadow">
             <li className='text-center '><NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Home'>Home</NavLink></li>
-           <li className='text-center '> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3':''} to='/Apps'>Apps</NavLink></li>
-           <li className='text-center '> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3':''} to='/Installation'>Installation</NavLink></li>
+           <li className='text-center '> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Apps'>Apps</NavLink></li>
+           <li className='text-center '> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Installation'>Installation</NavLink></li>
       </ul>
     </div>
     <Link to='/Home' className="btn btn-ghost text-xl"><figure className='w-[40px] '><img src={logo} alt="" /></figure><h1 className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent text-2xl font-bold'>HERO.IO</h1> </Link>
@@ -29,8 +29,8 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu flex gap-10 menu-horizontal px-1">
  <li><NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Home'>Home</NavLink></li>
-           <li> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3':''} to='/Apps'>Apps</NavLink></li>
-           <li> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3':''} to='/Installation'>Installation</NavLink></li>
+           <li> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Apps'>Apps</NavLink></li>
+           <li> <NavLink className={ ({isActive})=> isActive?'border-b-3 text-[#632EE3]':''} to='/Installation'>Installation</NavLink></li>
       
         
       
