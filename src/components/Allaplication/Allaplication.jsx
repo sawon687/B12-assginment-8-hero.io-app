@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import useApp from '../../hook/usehook';
 import Allcard from '../AllaplicationCard/Allcard';
-import { Link, useNavigate } from 'react-router';
+
 import Loading from '../Loading/Loading';
+import AppsNotFound from '../AppsNotFound/AppsNotFound';
 const Allaplication = () => {
     const [allApp,loading]=useApp()
     const [search,setSearch]=useState('')
@@ -26,6 +27,7 @@ const Allaplication = () => {
           }, 300);
           return ()=>clearTimeout(timer)
        },[term,allApp])
+     
     return (
         <div >
               <div className='space-y-5 '>
@@ -57,14 +59,11 @@ const Allaplication = () => {
                     <Loading></Loading>
             ): searchApp.length > 0 ? 
              ( <div className='grid py-15 lg:grid-cols-4 gap-5 mt-10  md:grid-cols-3 grid-cols-1'>  {searchApp.map(appdata=> <Allcard key={appdata.id}  appdata={appdata}></Allcard>) } </div>) :
-             ( <div className='flex justify-center items-center flex-col'>
-
-                <h1 className=' text-center mt-50  mx-auto font-bold text-5xl'>No apps found </h1>
-
-                  <div className='mt-5' >
-                    <button onClick={()=> setSearch('')} className=' btn  text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Show All Apps</button>
-                  </div>
-
+             ( <div className='-mt-20 space-y-3'>
+                  <AppsNotFound/>
+                 <div className='flex justify-center -mt-26 mb-4'>
+                   <button onClick={()=> setSearch('')}  className=' btn py-6 mt-6 px-10 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Go Back </button>
+                 </div>
              </div>)
 
 

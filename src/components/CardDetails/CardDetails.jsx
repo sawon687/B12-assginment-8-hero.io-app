@@ -1,11 +1,12 @@
 import useApp from "../../hook/usehook";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { FaStar } from "react-icons/fa";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import like from "../../assets/icon-review.png";
 import Rechart from "../Rechart/Rechart";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import AppsNotFound from "../AppsNotFound/AppsNotFound";
 
 const CardDetails = () => {
   const [isClicked, setIsClicked] = useState(true);
@@ -31,27 +32,29 @@ const CardDetails = () => {
     setIsClicked(true);
     toast('cliked')
   };
+  
+  const navigate=useNavigate()
 
-  if (!singleApp) return <div className="flex h-[700px] flex-col  justify-center items-center "><div className="w-96 flex justify-center   items-center h-96 border-20 rounded-full border-red-500">
-    <span className="font-bold text-center text-[250px] text-red-500">!</span>
-    </div>
-    <h1 className="mt-4 text-6xl font-bold">APP is Not Found</h1>
-    <Link to='/Home' className=' btn py-6 mt-6 px-10 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Back To Home</Link>
-    </div>;
+  if (!singleApp) return <div>
+    <AppsNotFound/>
+     <div className='flex justify-center -mt-26 mb-4'>
+                   <button onClick={()=> navigate(-1)}  className=' btn py-6 mt-6 px-10 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Go Back </button>
+                 </div>
+  </div>;
 
   const { image, title, description, companyName, size, downloads, ratingAvg, reviews, ratings } =
     singleApp;
 
   return (
-    <div className="lg:px-20">
+    <div className="md:w-11/12 mx-auto lg:w-[1300px] ">
       <div className="flex gap-10 flex-col md:flex-row pt-10 items-center border-b-2 border-gray-300 pb-2">
         <div className="bg-white   shadow-xl rounded-xl w-[300px] flex items-center justify-center h-[300px]">
-          <figure className="ml-6">
+          <figure className="flex justify-center items-center">
           <img  src={image} alt={title} />
         </figure>
         </div>
         <div>
-          <div className=" flex-1 border-b-2   py-4 space-y-3 border-gray-300">
+          <div className=" flex-1 border-b-2 w-full  py-4 space-y-3 border-gray-300">
             <h1 className="text-3xl font-bold text-center md:text-start  text-[#001931]">{title}</h1>
             <h3 className="text-xl text-center md:text-start font-bold">
               Developed by {''}
