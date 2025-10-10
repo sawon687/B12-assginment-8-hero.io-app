@@ -7,6 +7,7 @@ import Rechart from "../Rechart/Rechart";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import AppsNotFound from "../AppsNotFound/AppsNotFound";
+import "react-toastify/dist/ReactToastify.css";
 import Loading from "../Loading/Loading";
 
 const CardDetails = () => {
@@ -14,11 +15,11 @@ const CardDetails = () => {
   const [appdetails,loading] = useApp();
   const { id } = useParams();
 
-  const singleApp = appdetails.find((app) => app.id === parseInt(id));
+  const singleApp = appdetails.find((app) => app.id === Number(id));
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("InstalledApps")) || [];
-    const alreadyInstalled = saved.some((app) => app.id === parseInt(id));
+    const alreadyInstalled = saved.some((app) => app.id === Number(id));
     setIsClicked(alreadyInstalled);
   }, [id]);
 
@@ -31,7 +32,8 @@ const CardDetails = () => {
     const updatedList = [...saved, singleApp];
     localStorage.setItem("InstalledApps", JSON.stringify(updatedList));
     setIsClicked(true);
-    toast('cliked')
+    
+      toast('Install Successfully')
   };
   
   const navigate=useNavigate()
@@ -45,7 +47,10 @@ const CardDetails = () => {
 
   const { image, title, description, companyName, size, downloads, ratingAvg, reviews, ratings } =
     singleApp;
-
+ if(loading)
+ {
+   return <Loading/>
+ }
    
 
   return (

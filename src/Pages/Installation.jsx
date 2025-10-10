@@ -8,11 +8,11 @@ const Installation = () => {
     const [,loading]=useApp()
     if(loading)
     {
-        return loading
+        return <Loading/>
     }
     return (
         <>
-               <div>
+        <div>
             <InstallApps ></InstallApps>
         </div>
         

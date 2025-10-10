@@ -19,8 +19,8 @@ const Banner = () => {
 <span className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text  text-transparent  font-bold'>Productive</span> Apps</h1>
 <p className='text-center lg:px-90 text-gray-500'>At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
  <div className='flex justify-center gap-5'>
-    <Link className='btn py-6'><img src={playStoreIcon}  alt="play store" /> Google Play</Link>
-    <Link className='btn py-6'> <img src={appStoreIcon} alt="App store" />App Store</Link>
+    <Link to='https://play.google.com/store/games?hl=en' className='btn py-6'><img src={playStoreIcon}  alt="play store" /> Google Play</Link>
+    <Link to='https://www.apple.com/app-store/' className='btn py-6'> <img src={appStoreIcon} alt="App store" />App Store</Link>
     </div>
      
     <div>

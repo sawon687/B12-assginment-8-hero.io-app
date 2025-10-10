@@ -2,7 +2,7 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 
-const InstallApp = ({ app, onRemove }) => {
+const InstallApp = ({ app, handleUnstall }) => {
   return (
     <div className="flex items-center justify-between flex-col md:flex-row bg-white shadow-sm p-5 rounded-xl mb-4">
       <div className="flex items-center gap-6">
@@ -25,7 +25,7 @@ const InstallApp = ({ app, onRemove }) => {
         </div>
       </div>
       <button
-        onClick={() => onRemove(app.id)}
+        onClick={() =>handleUnstall(app.id)}
         className="btn bg-[#00d390] px-10 text-white"
       >
         Uninstall

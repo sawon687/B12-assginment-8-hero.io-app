@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import InstallApp from "../InstallApp/InstallApp";
+import { toast } from "react-toastify";
 
 const InstallApps = () => {
   const [sortOrder, setSortOrder] = useState("none");
@@ -11,10 +12,12 @@ const InstallApps = () => {
     setInstalledApps(saved);
   }, []);
 
-  const handleRemove = (id) => {
+  const handleUnstall = (id) => {
     const updated = installed.filter((app) => app.id !== id);
     setInstalledApps(updated);
     localStorage.setItem("InstalledApps", JSON.stringify(updated));
+
+     toast('UnInstall Successfully')
   };
 
   useEffect(() => {
@@ -77,7 +80,7 @@ const InstallApps = () => {
       <div className="space-y-4 mt-5 px-5 md:px-0">
         {installed.length > 0 ? (
           installed.map((app) => (
-            <InstallApp key={app.id} app={app} onRemove={handleRemove} />
+            <InstallApp key={app.id} app={app} handleUnstall={handleUnstall} />
           ))
         ) : (
           <p className="text-center text-5xl font-bold text-gray-500">No installed apps found.</p>
