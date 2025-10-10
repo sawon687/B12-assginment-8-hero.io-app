@@ -4,9 +4,9 @@ import { PiDownloadSimpleBold } from "react-icons/pi";
 
 const InstallApp = ({ app, handleUnstall }) => {
   return (
-    <div className="flex items-center justify-between flex-col md:flex-row bg-white shadow-sm p-5 rounded-xl mb-4">
+    <div className=" w-full flex items-center md:justify-between border-box  flex-col md:flex-row bg-white shadow-sm p-5 rounded-xl mb-4">
       <div className="flex items-center gap-6">
-        <figure className="w-[140px] bg-gray-300 rounded-xl">
+        <figure className="md:w-[140px]  bg-gray-300 rounded-xl">
           <img src={app.image} alt={app.title} className="rounded-xl" />
         </figure>
         <div>
@@ -24,12 +24,14 @@ const InstallApp = ({ app, handleUnstall }) => {
           </div>
         </div>
       </div>
-      <button
+     <div className="mt-5 md:mt-0">
+       <button
         onClick={() =>handleUnstall(app.id)}
-        className="btn bg-[#00d390] px-10 text-white"
+        className="btn f bg-[#00d390] px-10 text-white"
       >
         Uninstall
       </button>
+     </div>
     </div>
   );
 };

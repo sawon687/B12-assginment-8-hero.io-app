@@ -10,13 +10,13 @@ const TrendingApps = () => {
     const trendinApps=app.slice(0,8)
     console.log(trendinApps)
     return (
-        <div>
+        <div className='md:11/12 '>
 
            (
                      <div className='py-10'>
             <h1 className='text-center my-4 text-5xl font-bold'>Trending Apps</h1>
             <p className='text-center text-[#627382]'>Explore All Trending Apps on the Market developed by us</p>
-           <div className='grid lg:grid-cols-4 gap-10 mt-10 px-20 md:grid-cols-3 grid-cols-1 '>
+           <div className='grid lg:grid-cols-4 gap-10 mt-10 md:grid-cols-3 grid-cols-1 md:px-20 px-7'>
              {
                  trendinApps.map((appData)=> <Homecard appData={appData}></Homecard> )
              }
